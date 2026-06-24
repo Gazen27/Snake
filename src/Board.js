@@ -1,6 +1,6 @@
 export class Board {
 
-  //Costruttor
+  //Constructor
   constructor(size){
     this.cells = [];
     this.size = size * size;    
@@ -9,7 +9,7 @@ export class Board {
     this.#generate();
   }
 
-  //Creazione della griglia di gioco
+  //Creation of the board
   #generate() {
     for(let i=0; i<this.size; i++){
       const cell = document.createElement("div");
