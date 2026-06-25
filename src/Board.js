@@ -49,4 +49,13 @@ export class Board {
     const index = food.position.y * 20 + food.position.x;
     this.cells[index].classList.add("food");
   }
+
+  //Checking colliding cell
+  checkCell(snake) {
+    const head = snake[snake.length - 1];
+    
+    if(head.classList == "snake"){return "collide";}
+    else if(head.classList == "food"){return "eatable";}
+    else {return "empty";}
+  }
 }

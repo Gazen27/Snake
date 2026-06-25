@@ -5,10 +5,16 @@ body {
   align-items: center;
 }
 
+/* Displayed title*/
+#title {
+  font-family: OCR A Std, monospace;
+  font-size: 40px;
+}
+
 /* Game board */
 #board {
   display: grid;
-  border: 1px solid black;
+  border: 5px solid darkgray;
   grid-template-rows: repeat(20, 25px);
   grid-template-columns: repeat(20, 25px);
 }
@@ -17,15 +23,17 @@ body {
 .cell {
   width: 25px;
   height: 25px;
-  border: 1px solid black;
+  border: 1px solid lightgray;
 }
 
 /* Snake */
 .snake {
   background-color: green;
+  border: none !important; 
 }
 
 /* Food */
 .food {
   background-color: red;
+  border: none !important
 }
