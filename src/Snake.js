@@ -10,7 +10,14 @@ export class Snake {
   }
 
   //Moving the snake
-  move() {}
+  move(direction) {
+    this.head = this.body[length-1];
+    
+    if(direction == "left") { this.newHead = {x: this.head - 1, y: this.head.y} }
+    else if(direction == "right") { this.newHead = {x: this.head + 1, y: this.head.y} }
+    else if(direction == "up") { this.newHead = {x: this.head, y: this.head.y - 1} }
+    else if(direction == "down") { this.newHead = {x: this.head, y: this.head.y + 1} }
+  }
 
   //Increasing snake's size
   grow() {}

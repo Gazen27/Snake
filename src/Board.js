@@ -20,11 +20,25 @@ export class Board {
     }
   }
 
+  //Refreshing the state of the snake
+  clearSnake() {
+    for(let i = 0; i<this.size; i++){
+      this.cells[i].classList.remove("snake");
+    }
+  }
+
+  //Refreshing the state of the snake
+  clearFood() {
+    for(let i = 0; i<this.size; i++){
+      this.cells[i].classList.remove("food");
+    }
+  }
+
   //Placing the snake on the board
-  drawSnake(snake, rows) {
+  drawSnake(snake) {
     for(let i=0; i<snake.length; i++){
       const segment = snake[i];
-      const index = segment.y * rows + segment.x;
+      const index = segment.y * 20 + segment.x;
 
       this.cells[index].classList.add("snake");
     }
