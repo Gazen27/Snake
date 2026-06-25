@@ -21,9 +21,11 @@ export class Board {
   }
 
   //Placing the snake on the board
-  drawSnake(snake, size) {
-    for(let i=0; i<snake.lenght; i++){
-      index = snake[i].y * size + snake[i].x;
+  drawSnake(snake, rows) {
+    for(let i=0; i<snake.length; i++){
+      const segment = snake[i];
+      const index = segment.y * rows + segment.x;
+
       this.cells[index].classList.add("snake");
     }
   }
