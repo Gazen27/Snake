@@ -43,4 +43,10 @@ export class Board {
       this.cells[index].classList.add("snake");
     }
   }
+
+  //Placing the food on the board
+  drawFood(food) {
+    const index = food.position.y * 20 + food.position.x;
+    this.cells[index].classList.add("food");
+  }
 }
