@@ -27,7 +27,7 @@ export class Board {
     }
   }
 
-  //Refreshing the state of the snake
+  //Refreshing the state of the food
   clearFood() {
     for(let i = 0; i<this.size; i++){
       this.cells[i].classList.remove("food");

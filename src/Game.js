@@ -16,13 +16,13 @@ export class Game {
 
   //Starting the game
   start() {
-    this.interval = setInterval(this.update.bind, 150);
+    this.interval = setInterval(this.update.bind(this), 120);
   }
 
   //Refreshing game instance
   update() {
-    this.snake.move();
+    this.snakeBody = this.snake.move("right");
     this.board.clearSnake();
-    this.board.drawSnake();
+    this.board.drawSnake(this.snakeBody);
   }
 }
