@@ -8,6 +8,7 @@ body {
 /* Game board */
 #board {
   display: grid;
+  border: 1px solid black;
   grid-template-rows: repeat(20, 20px);
   grid-template-columns: repeat(20, 20px);
 }
@@ -26,5 +27,5 @@ body {
 
 /* Food */
 .food {
-  background-color: red;;
+  background-color: red;
 }
