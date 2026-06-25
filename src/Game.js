@@ -7,5 +7,8 @@ export class Game {
   constructor() {
     this.board = new Board(20);
     this.snake = new Snake();
+
+    this.snakeBody = this.snake.body;
+    this.board.drawSnake(this.snakeBody, 20);
   }
 }

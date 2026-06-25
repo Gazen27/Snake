@@ -19,4 +19,12 @@ export class Board {
       this.cells.push(cell);
     }
   }
+
+  //Placing the snake on the board
+  drawSnake(snake, size) {
+    for(let i=0; i<snake.lenght; i++){
+      index = snake[i].y * size + snake[i].x;
+      this.cells[index].classList.add("snake");
+    }
+  }
 }
