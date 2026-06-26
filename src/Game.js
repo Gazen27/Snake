@@ -11,6 +11,7 @@ export class Game {
     this.food = new Food();
 
     this.direction = "right";
+    this.score = 0;
 
     this.snakeBody = this.snake.body;
     this.board.drawSnake(this.snakeBody);
@@ -43,6 +44,9 @@ export class Game {
     this.food.spawn();
     this.board.drawFood(this.food);
     this.board.drawSnake(this.snakeBody); 
+
+    this.score = this.score + 1;
+    this.setScore(this.score);
   }
 
   //Refreshing game instance
@@ -70,5 +74,10 @@ export class Game {
   if (event.key === "a" && this.direction != "right") {this.direction = "left";}
   if (event.key === "s" && this.direction != "up") {this.direction = "down";}
   if (event.key === "d" && this.direction != "left") {this.direction = "right";}
+  }
+
+  //Setting the score
+  setScore(score) {
+    document.querySelector("#textScore").textContent = `Score: ${score}`;
   }
 }
