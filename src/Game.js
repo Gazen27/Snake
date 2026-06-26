@@ -20,8 +20,14 @@ export class Game {
   //Starting the game
   start() {
     document.addEventListener("keydown", this.getDirection.bind(this));
-    this.interval = setInterval(this.update.bind(this), 100);
+    this.interval = setInterval(this.update.bind(this), 110);
   }
+
+  //Ending the game
+  gameover() {
+    clearInterval(this.interval);
+    console.log("Game Over!");
+}
 
   //Drawing the snake in the new position
   updateSnake() {

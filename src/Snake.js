@@ -25,5 +25,7 @@ export class Snake {
   }
 
   //Increasing snake's size
-  grow() {}
+  grow() {
+    
+  }
 }

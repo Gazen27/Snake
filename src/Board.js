@@ -53,9 +53,12 @@ export class Board {
   //Checking colliding cell
   checkCell(snake) {
     const head = snake[snake.length - 1];
+    const index = head.y * 20 + head.x;
     
-    if(head.classList == "snake"){return "collide";}
-    else if(head.classList == "food"){return "eatable";}
+    if(this.cells[index] == undefined){return "collide";}
+    else if(head.x < 0 || head.x > 19){return "collide";}
+    else if(this.cells[index].classList.contains("snake")){return "collide";}
+    else if(this.cells[index].classList.contains("food")){return "eatable";}
     else {return "empty";}
   }
 }
