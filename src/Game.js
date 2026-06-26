@@ -32,6 +32,16 @@ export class Game {
   //Drawing the snake in the new position
   updateSnake() {
     this.board.clearSnake();
+    this.snakeBody.shift();
+    this.board.drawSnake(this.snakeBody); 
+  }
+
+  //Crescita del serpente
+  grow(){
+    this.board.clearSnake();
+    this.board.clearFood();
+    this.food.spawn();
+    this.board.drawFood(this.food);
     this.board.drawSnake(this.snakeBody); 
   }
 
@@ -46,8 +56,8 @@ export class Game {
 
     //Next position contains food
     else if(this.board.checkCell(this.snakeBody) == "eatable"){
-      //Funzione per mangiare
-      this.updateSnake();
+
+      this.grow();
     }
 
     //Next position contains a collision point
