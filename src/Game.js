@@ -54,15 +54,10 @@ export class Game {
     this.snakeBody = this.snake.move(this.direction);
     
     //Next position is empty
-    if(this.board.checkCell(this.snakeBody) == "empty"){
-      this.updateSnake();
-    }
+    if(this.board.checkCell(this.snakeBody) == "empty"){this.updateSnake();}
 
     //Next position contains food
-    else if(this.board.checkCell(this.snakeBody) == "eatable"){
-
-      this.grow();
-    }
+    else if(this.board.checkCell(this.snakeBody) == "eatable"){this.grow();}
 
     //Next position contains a collision point
     else{this.gameover();}
