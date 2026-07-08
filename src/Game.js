@@ -16,6 +16,8 @@ export class Game {
     this.snakeBody = this.snake.body;
     this.board.drawSnake(this.snakeBody);
     this.board.drawFood(this.food);
+
+    this.container = document.getElementById("gameContainer");
   }
 
   //Starting the game
@@ -27,8 +29,12 @@ export class Game {
   //Ending the game
   gameover() {
     clearInterval(this.interval);
-    console.log("Game Over!");
-}
+    const end = document.createElement("div");
+    end.innerHTML = "GAME OVER! Reload to play again.";
+    end.id = "gameover";
+    
+    this.container.append(end);
+  }
 
   //Drawing the snake in the new position
   updateSnake() {

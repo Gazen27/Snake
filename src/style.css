@@ -33,13 +33,19 @@ body {
   border: 1px solid lightgray;
 }
 
-/* Label of the score */
+/* Score */
 #textScore {
   font-family: OCR A Std, monospace;
   padding-top: 10px;
 }
 
-/* Score */
+/* Game Over */
+#gameover {
+  font-family: OCR A Std, monospace;
+  font-weight: bold;
+  color: red;
+  padding-top: 5px;
+}
 
 /* Snake */
 .snake {
